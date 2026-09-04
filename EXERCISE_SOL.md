@@ -73,10 +73,7 @@ $
 Exactly what we want.
 
 ---
-4. From your `main.c` file, print the value of only constant
-defined in `status.h`. What is the error? What is the fix (at least two possible)?
-
-When running make, we get the following error:
+4. When running make, we get the following error:
 
 ```
 In file included from student.h:1,
@@ -112,10 +109,7 @@ $./main
 $
 ```
 ---
-5. Change the value of the constant in `status.h` from `true` to `false`.
-Run `make`. What is the problem? What is the fix?
-
-Because main was not modified, running `make` again returns "make: 'main' is up to date", and teh output remains 1 (true). To solve this, we simply add a `status.h` dependency to the `makefile`, and so the makefile will be as follows:
+5. Because main was not modified, running `make` again returns "make: 'main' is up to date", and teh output remains 1 (true). To solve this, we simply add a `status.h` dependency to the `makefile`, and so the makefile will be as follows:
 
 ```
 main: main.c status.h
@@ -134,10 +128,7 @@ $
 which is the expected output.
 
 ---
-6. Warnings are a great tool to have when programming.
-Enable all the possible warnings you will ever get from your compiler.
-
-To do so, we add a variable `CFLAGS` in `makefile`, and add it after gcc (see `makefile`). The variable is set as follows:
+6. To do so, we add a variable `CFLAGS` in `makefile`, and add it after gcc (see `makefile`). The variable is set as follows:
 
 ```
 CFLAGS = -Wall -Wextra -Werror --std=c2x
@@ -145,9 +136,28 @@ CFLAGS = -Wall -Wextra -Werror --std=c2x
 `-Wall` shows all the warnings, `-Wextra` shows all the extra warnings (the ones `-Wall` doesnt include), `-Werror` treats all warnings as errors, and `--std=c2x` uses the latest standard of C from 202x to compile.
 
 ---
-7. Include `student.h` into your `makefile`. In addition to step 4,
-also define a student. What is the error? What is the fix?
+7. Defining a student (see `main.c`), we get the following output:
 
+```
+$ make
+gcc -Wall -Wextra -Werror --std=c2x main.c -o main
+main.c: In function ‘main’:
+main.c:7:15: error: variable ‘student1’ set but not used [-Werror=unused-but-set-variable]
+    7 |     student_t student1;
+      |               ^~~~~~~~
+cc1: all warnings being treated as errors
+make: *** [makefile:4: main] Error 1
+$
+```
+This is because we set all warnings to be treated as errors with `-Werror`, and an unused variable causes a warning due to wasted memory space. To resolve this, we must simply tell the complier that we will not be using this variable by adding the keyword `(void)` after declaration (see `main.c`). Adding this solves the error, and running `make` returns
+
+```
+$ make
+gcc -Wall -Wextra -Werror --std=c2x main.c -o main
+$
+```
+
+No errors, as expected.
 ---
 ### Data Types
 
