@@ -167,7 +167,7 @@ No errors, as expected.
 ---
 2. main variable types are `void`, `char`, `short`, `int`, `long`, `float`, `double`, and `auto`.
 ---
-3. (pending).
+3. (pending)
 
 ---
 ### Building blocks of Programming
