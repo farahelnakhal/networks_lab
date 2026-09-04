@@ -167,20 +167,10 @@ No errors, as expected.
 ---
 2. main variable types are `void`, `char`, `short`, `int`, `long`, `float`, `double`, and `auto`.
 ---
-3. 
+3. (pending)
 
 ---
 ### Building blocks of Programming
 
-1. Sequence: Covered in `Playing around with makefile`
-2. Assignment: Covered in `Data Types`
-1. Selection: Write a program that will take a number from the user,
-and produce output as follows:
-
-| condition | output |
-|-----------|--------|
-| divisible by 3 | "foo" |
-| divisible by 5 | "bar" |
-| divisible by 3 and 5 | "foobar" |
-
-4. Repetition: Write a program to sort an array of integers using bubble sort.
+1. see `selection.c`, in directory p3 in root.
+2. see `repetition.c`, in directory p3 in root.
