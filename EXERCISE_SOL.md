@@ -158,22 +158,16 @@ $
 ```
 
 No errors, as expected.
+
 ---
 ### Data Types
 
-1. What is a variable (take a minute to write it down)?
-it reserves a spot in memory to hold a value (integer, float, etc) that can change while the program runs
+1. A variable reserves a spot in memory to hold a value (integer, float, etc) that can change while the program runs.
 
 ---
-2. Each variable has a type in C. What are all the types defined in C?
-void, char, short, int, long, float, double, auto.
+2. main variable types are `void`, `char`, `short`, `int`, `long`, `float`, `double`, and `auto`.
 ---
-3. Create two files `sizeinfo.h` and `sizeinfo.c`. `sizeinfo.h` should
-expose a function `void system_sizes()`. This function
-
-As you work with multiple files, ensure that your editor recognizes
-symbols and errors from other files. Remember the `bear` software
-that was discussed in lab setup videos.
+3. 
 
 ---
 ### Building blocks of Programming
